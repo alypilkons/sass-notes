@@ -1,0 +1,67 @@
+NESTING--
+Can nest one selector inside another, like this:
+
+.parent {
+  color: blue
+  .child {
+    font-size: 12px;
+  }
+}
+
+Can also next CSS properties, like this:
+
+p {
+  font: {
+    family: Arial;
+    size: 12px;
+  }
+}
+
+To apply a property to all direct children of an element, try this:
+
+.parent-class {
+  > * {
+    padding: 20px;
+  }
+}
+
+For nesting pseudo elements:
+
+.example-class {
+  &:hover {
+    color: blue;
+  }
+}
+
+For nesting types of classes with the &
+
+.btn {  
+  padding: 1em;  
+  &-green {  
+    background: green;  
+  }
+}
+will compile to...
+.btn {  
+  padding: 1em;  
+  font-size: 1.2em;  
+}
+.btn-green {  
+  background: green;  
+}
+
+
+VARIABLES--
+Can set a variable to a number, like this:
+
+$icon-length: 300px;
+.icon {
+  width: $icon-length
+ }
+ 
+ Can set a variable as a list, like this:
+ 
+ $standard-border: 1px solid black;
+ .icon {
+   border: $standard-border;
+ }
